@@ -1,0 +1,74 @@
+﻿@model Games2 .Models.Cliente
+@{
+    ViewBag.Title = "Cliente";
+}
+
+<h3>Cadastrar Cliente</h3>
+@using (Html.BeginForm("CadCliente", "Cliente", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliCod)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.cliCod)
+        @Html.ValidationMessageFor(m => m.cliCod)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliNome)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.cliNome)
+        @Html.ValidationMessageFor(m => m.cliNome)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliCPF)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.cliCPF)
+        @Html.ValidationMessageFor(m => m.cliCPF)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliDataNasc)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.cliDataNasc)
+        @Html.ValidationMessageFor(m => m.cliDataNasc)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliEmail)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.cliEmail)
+        @Html.ValidationMessageFor(m => m.cliEmail)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliCell)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.cliCell)
+        @Html.ValidationMessageFor(m => m.cliCell)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.cliEndereco)
+
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.cliEndereco)
+        @Html.ValidationMessageFor(m => m.cliEndereco)
+    </div>
+
+    <div>
+        <br /><input type="submit" value="Cadastrar" name="btnenviarcli" />
+    </div>
+</fieldset>
+}
+

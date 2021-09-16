@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Games2.Models.Jogo>
+@{
+    ViewBag.Title = "ListarJogo";
+}
+
+<p>@Html.ActionLink("Cadastrar Jogo", "Jogo", "Jogo")</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.jogoCod)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.jogoNome)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.jogoVersao) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.jogoDev)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.jogoGenero)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.jogoFaixaEtaria) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.jogoPlataf)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.jogoAnoLanc) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.jogoSinopse) 
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogoCod) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogoNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogoVersao) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogoDev) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogoGenero)  
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogoFaixaEtaria)  
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogoPlataf) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jogoAnoLanc)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.jogoSinopse)  
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "AltJogo", null, new { cdJogo = item.jogoCod }, new { @class = "btn btn-primary btn-xs"})
+                @Html.ActionLink("Deletar", "DelJogo", null, new { cdJogo = item.jogoCod }, new { @class = "btn btn-danger btn-xs"})
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Games2.Models.Cliente>
+@{
+    ViewBag.Title = "ListarCliente";
+}
+
+<p>@Html.ActionLink("Cadastrar Cliente", "Cliente", "Cliente")</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.cliCod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.cliNome) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.cliCPF)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.cliDataNasc)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.cliEmail) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.cliCell)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.cliEndereco)  
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliCod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliCPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliDataNasc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliCell)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliEndereco)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "AltCliente", null, new { cdCli = item.cliCod }, new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Deletar", "DelCliente", null, new { cdCli = item.cliCod }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
+
+
+</table>

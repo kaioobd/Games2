@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Games2.Models.Funcionario>
+@{
+    ViewBag.Title = "ListarFuncionario";
+}
+
+<p>@Html.ActionLink("Cadastrar Funcionario", "Funcionario", "Funcionario")</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.funcCod)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.funcNome) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.funcCPF) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.funcRG) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.funcDataNasc)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.funcEndereco) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.funcCell)  
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.funcEmail) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.funcCargo)  
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcCod) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcNome)  
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcCPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcRG)  
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcDataNasc) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcEndereco) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcCell)  
+            </td>
+            <td>
+                @Html.DisplayFor(modelFor => item.funcEmail) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcCargo)  
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "AltFuncionario", null, new { cdFunc = item.funcCod }, new { @class = "btn btn-primary btn-xs"})
+                @Html.ActionLink("Deletar", "DelFuncionario", null, new { cdFunc = item.funcCod }, new { @class = "btn btn-danger btn-xs"})
+            </td>
+        </tr>
+    }
+
+
+</table>
+
